@@ -1,0 +1,7 @@
+// app global css in SCSS form
+@media print {
+	.no-print {
+		display: none;
+		visibility: hidden;
+	}
+}
