@@ -1,5 +1,7 @@
 <template>
   <q-page class="flex flex-center flex-reversed">
+  	<q-select v-model="s" :options="options" >
+  	</q-select>
     <p v-for="d in data" :key="d">
      <span v-for = "t in d.split('')" :key="t" >
     	<box :w = "t"></box>
@@ -19,13 +21,22 @@ export default {
   },
   data () {
   	return {
-  		data: null
+  		s: '床前明月',
+  		data: null,
+  		options: ['床前明月', '將進酒']
   	}
   },
   mounted() {
   	this.$axios.get('https://bestian.github.io/q-poet/poets/床前明月').then((r) => {
   		this.data = r.data.split('\n')
   	})
+  },
+  watch: {
+  	s: function (val) {
+  		this.$axios.get('https://bestian.github.io/q-poet/poets/' + val).then((r) => {
+  		this.data = r.data.split('\n')
+	  })
+  	}
   }
 }
 </script>
@@ -34,6 +45,7 @@ export default {
 
 .flex-reversed {
 	flex-flow: row-reverse;
+	overflow: scroll;
 }
 
 p {
@@ -45,5 +57,6 @@ p {
   line-height: 2em;
   height: 90vh;
   padding: 0.5em 0;
+  overflow: visible;
 }
 </style>
