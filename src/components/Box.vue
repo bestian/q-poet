@@ -376,6 +376,7 @@ export default {
     align-items: center;
     position: relative;
     top: -2em;
+    right: -0.9em;
     color: gray;
   }
 
