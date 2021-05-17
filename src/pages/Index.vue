@@ -23,7 +23,7 @@ export default {
   	}
   },
   mounted() {
-  	this.$axios.get('/poets/床前明月').then((r) => {
+  	this.$axios.get('https://bestian.github.io/q-poet/poets/床前明月').then((r) => {
   		this.data = r.data.split('\n')
   	})
   }
