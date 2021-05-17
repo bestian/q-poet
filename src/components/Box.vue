@@ -68,7 +68,7 @@ export default {
     },
     fillBucket: function (id, bucket, cb) {
       var vm = this
-      this.$axios.get('p' + this.url + 'ck/' + bucket + '.txt').then((d) => {
+      this.$axios.get('https://bestian.github.io/q-poet/p' + this.url + 'ck/' + bucket + '.txt').then((d) => {
         console.log(d)
         if (d) {
           var key = escape(id)
@@ -82,7 +82,7 @@ export default {
           this.playing = false
           // addToLru(id)
         } else {
-          vm.$axios.get('p' + vm.url + 'ck/' + bucket + '.txt').then((response) => {
+          vm.$axios.get('https://bestian.github.io/q-poet/p' + vm.url + 'ck/' + bucket + '.txt').then((response) => {
             // console.log(response.data)
             /* var raw = JSON.stringify(response.data)
             var key, idx, part
