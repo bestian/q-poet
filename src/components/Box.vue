@@ -306,7 +306,7 @@ export default {
     z-index: 999999;
     display: inline-flex;
     position: relative;
-    padding: .2em 0em;
+    padding: 0em 0em;
     border-radius: 5px;
     overflow: visible;
   }

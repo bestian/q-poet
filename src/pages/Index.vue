@@ -28,7 +28,14 @@ export default {
   },
   mounted() {
   	this.$axios.get('https://bestian.github.io/q-poet/poets/床前明月').then((r) => {
-  		this.data = r.data.split('\n')
+      var list = r.data.split('')
+      for (var i = 0; i < list.length; i++) {
+        if (list[i] == '，' || list[i] == '。') {
+          list[i] = list[i] + '\n'
+        }
+      }
+      var x = list.join('')
+  		this.data = x.split('\n')
   	})
   },
   watch: {
@@ -45,26 +52,28 @@ export default {
 
 .flex-reversed {
 	flex-flow: row-reverse;
-	overflow: scroll;
+	overflow-x: scroll;
 }
 
 p {
   -webkit-writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
-  white-space: pre-wrap;
-  font-size: 24px;
-  line-height: 2em;
+  white-space:nowrap;
   height: 85vh;
-  padding: 0.5em 0;
-  overflow: scroll;
+  padding: 0em 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-right: -1.6em; 
 }
 
 #main {
 	position: absolute;
+  z-index: 999;
 	top: 6em;
 	right: 0;
-	width: calc(100vw - 300px);
-    overflow: scroll;
+  height: 85vh;
+  width: 66vw;
+  overflow-x: scroll;
 }
 </style>
