@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center flex-reversed">
+  <q-page id="main" class="flex flex-center flex-reversed">
   	<q-select v-model="s" :options="options" >
   	</q-select>
     <p v-for="d in data" :key="d">
@@ -52,11 +52,19 @@ p {
   -webkit-writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
-  white-space: pre-line;
+  white-space: pre-wrap;
   font-size: 24px;
   line-height: 2em;
-  height: 90vh;
+  height: 85vh;
   padding: 0.5em 0;
-  overflow: visible;
+  overflow: scroll;
+}
+
+#main {
+	position: absolute;
+	top: 6em;
+	right: 0;
+	width: calc(100vw - 300px);
+    overflow: scroll;
 }
 </style>

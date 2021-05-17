@@ -349,7 +349,6 @@ export default {
     display: inline-block;
     font-size: 14px;
     width: 1em;
-    height: 4em;
     overflow: visible;
   }
 
