@@ -357,6 +357,7 @@ export default {
     top: -0.6em;
     left: 0.5em;
     transform: rotate(-90deg);
+    -webkit-transform: translate(0, -100%);
   }
 
   a {
